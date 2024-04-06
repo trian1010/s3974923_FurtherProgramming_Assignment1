@@ -79,6 +79,7 @@ public class ClaimController {
         if(claimList.containsKey(id)) {
             Claim claim = claimList.get(id);
             System.out.println("Claim with the ID " + id + " has been removed.");
+            System.out.println();
             claimList.remove(id);
         } else {
             System.out.println("Claim with the ID " + id + " not found.");
