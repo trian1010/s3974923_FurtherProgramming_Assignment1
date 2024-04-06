@@ -71,6 +71,7 @@ public class ClaimViewText extends ClaimView {
         Scanner scanner = DataInput.getDataInput().getScanner();
         HashMap<String, String> data = new HashMap<>();
         System.out.println("New Claim Form");
+        System.out.println();
         System.out.println("Enter ID for the new claim; 10 numbers: ");
         // Restriction due to the requirement prompting admin to input Claim id with the correct format
         String id;
