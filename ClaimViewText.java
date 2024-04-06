@@ -72,7 +72,7 @@ public class ClaimViewText extends ClaimView {
         HashMap<String, String> data = new HashMap<>();
         System.out.println("New Claim Form");
         System.out.println();
-        System.out.println("Enter ID for the new claim; 10 numbers: ");
+        System.out.println("Enter ID for the new claim (10 numbers): ");
         // Restriction due to the requirement prompting admin to input Claim id with the correct format
         String id;
         do {
@@ -86,6 +86,7 @@ public class ClaimViewText extends ClaimView {
         data.put("CLAIM_DATE", String.valueOf(CLAIM_DATE.getTime()));
         System.out.println("Enter insured person: ");
         data.put(INSURED_PERSON, scanner.nextLine());
+        // Restriction due to the requirement prompting admin to input Claim's insurance card number with the correct format
         System.out.println("Enter card number (10 numbers): ");
         String CardNumber;
         do {
@@ -171,6 +172,7 @@ public class ClaimViewText extends ClaimView {
         data.put(CLAIM_ID, ClaimID);
         System.out.println("Update insured person: ");
         data.put(INSURED_PERSON, scanner.nextLine());
+        // Restriction due to the requirement prompting admin to input Claim's insurance card number with the correct format
         System.out.println("Update card number (10 numbers): ");
         String CardNumber;
         do {
