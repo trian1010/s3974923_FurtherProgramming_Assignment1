@@ -51,3 +51,55 @@ public abstract class Customer {
         this.claimList = claimList;
     }
 }
+
+// Policy Holder
+class PolicyHolder extends Customer {
+    // Attributes
+    private HashMap<String, Dependent> dependentList;
+
+    // Default Constructor
+    public PolicyHolder() {}
+
+    // Constructor
+    public PolicyHolder(String id, String fullName, InsuranceCard insuranceCard) {
+        super(id, fullName, insuranceCard);
+        this.dependentList = new HashMap<>();
+    }
+
+    // Getters and Setters
+    protected HashMap<String, Dependent> getDependentList() {
+        return dependentList;
+    }
+
+    protected void setDependentList(HashMap<String, Dependent> dependentList) {
+        this.dependentList = dependentList;
+    }
+}
+
+// Dependent
+class Dependent extends Customer{
+    // Attributes
+    private PolicyHolder policyHolder;
+
+    // Default Constructor
+    public Dependent() {};
+
+    // Constructor
+    public Dependent(PolicyHolder policyHolder) {
+        this.policyHolder = policyHolder;
+    }
+
+    public Dependent(String id, String fullName, InsuranceCard insuranceCard, PolicyHolder policyHolder) {
+        super(id, fullName, insuranceCard);
+        this.policyHolder = policyHolder;
+    }
+
+    // Getters and Setters
+    protected PolicyHolder getPolicyHolder() {
+        return policyHolder;
+    }
+
+    protected void setPolicyHolder(PolicyHolder policyHolder) {
+        this.policyHolder = policyHolder;
+    }
+}
