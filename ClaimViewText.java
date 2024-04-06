@@ -86,8 +86,15 @@ public class ClaimViewText extends ClaimView {
         data.put("CLAIM_DATE", String.valueOf(CLAIM_DATE.getTime()));
         System.out.println("Enter insured person: ");
         data.put(INSURED_PERSON, scanner.nextLine());
-        System.out.println("Enter card number: ");
-        data.put(CARD_NUMBER, scanner.nextLine());
+        System.out.println("Enter card number (10 numbers): ");
+        String CardNumber;
+        do {
+            CardNumber = scanner.nextLine();
+            if (!CardNumber.matches("\\d{10}")) {
+                System.out.println("Invalid card number. Must be in the format 10 numbers");
+            }
+        } while (!CardNumber.matches("\\d{10}"));
+        data.put(CARD_NUMBER, CardNumber);
         data.put("EXAM_DATE", String.valueOf(EXAM_DATE.getTime()));
         System.out.println("Input your documents; spacing with ',': ");
         ArrayList<String> documentList = new ArrayList<>();
@@ -164,8 +171,15 @@ public class ClaimViewText extends ClaimView {
         data.put(CLAIM_ID, ClaimID);
         System.out.println("Update insured person: ");
         data.put(INSURED_PERSON, scanner.nextLine());
-        System.out.println("Update card number: ");
-        data.put(CARD_NUMBER, scanner.nextLine());
+        System.out.println("Update card number (10 numbers): ");
+        String CardNumber;
+        do {
+            CardNumber = scanner.nextLine();
+            if (!CardNumber.matches("\\d{10}")) {
+                System.out.println("Invalid card number. Must be in the format 10 numbers");
+            }
+        } while (!CardNumber.matches("\\d{10}"));
+        data.put(CARD_NUMBER, CardNumber);
         data.put("EXAM_DATE", String.valueOf(EXAM_DATE.getTime()));
         System.out.println("Update your documents; spacing with ',': ");
         ArrayList<String> documentList = new ArrayList<>();
