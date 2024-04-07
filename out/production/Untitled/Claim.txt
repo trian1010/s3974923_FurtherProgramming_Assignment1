@@ -1,0 +1,150 @@
+Claim ID: f-9999000004
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Bruce
+Card Number: 9999040404
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000004_Document4.PDF
+Claim Amount: 4444.44
+Status: Processing
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Vietinbank', name='Bruce', number='040404040404'}
+
+Claim ID: f-9999000003
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Thomas
+Card Number: 9999030303
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000003_Document3.PDF
+Claim Amount: 3333.33
+Status: Processing
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Vietinbank', name='Thomas', number='030303030303'}
+
+Claim ID: f-9999131023
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Jace
+Card Number: 9999232323
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999131023_Document10.PDF, f-9999131023_Document23.PDF
+Claim Amount: 1310.23
+Status: New
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Vietcombank', name='Jace', number='131023131023'}
+
+Claim ID: f-9999000002
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Jack
+Card Number: 9999020202
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000002_Document2.PDF
+Claim Amount: 2222.22
+Status: Processing
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Vietinbank', name='Jack', number='020202020202'}
+
+Claim ID: f-9999000001
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Bill
+Card Number: 9999010101
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000001_Document1.PDF
+Claim Amount: 1111.11
+Status: Processing
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Vietinbank', name='Bill', number='010101010101'}
+
+Claim ID: f-9999000006
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Tom
+Card Number: 9999060606
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000006_Document6.PDF
+Claim Amount: 6666.66
+Status: Processing
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Vietinbank', name='Tom', number='060606060606'}
+
+Claim ID: f-9999000005
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Michael
+Card Number: 9999050505
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000005_Document5.PDF
+Claim Amount: 5555.55
+Status: Processing
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Vietinbank', name='Michael', number='050505050505'}
+
+Claim ID: f-9999231013
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Han
+Card Number: 9999131313
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999231013_Document10.PDF, f-9999231013_Document13.PDF
+Claim Amount: 2310.13
+Status: New
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Tpbank', name='Han', number='231013231013'}
+
+Claim ID: f-9999000007
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Anna
+Card Number: 9999070707
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000007_Document7.PDF
+Claim Amount: 7777.77
+Status: Done
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Techcombank', name='Anna', number='070707070707'}
+
+Claim ID: f-9999000008
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Layla
+Card Number: 9999080808
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000008_Document8.PDF
+Claim Amount: 8888.88
+Status: Done
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Techcombank', name='Layla', number='080808080808'}
+
+Claim ID: f-9999000009
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Clove
+Card Number: 9999090909
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000009_Document9.PDF
+Claim Amount: 9999.99
+Status: Done
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Techcombank', name='Clove', number='090909090909'}
+
+Claim ID: f-9999000010
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Lucky
+Card Number: 9999101010
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000010_Document10.PDF
+Claim Amount: 1010.1
+Status: Done
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Techcombank', name='Lucky', number='101010101010'}
+
+Claim ID: f-9999000011
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Sage
+Card Number: 9999111111
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000011_Document11.PDF
+Claim Amount: 1111.11
+Status: Done
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Techcombank', name='Sage', number='111111111111'}
+
+Claim ID: f-9999000012
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: John
+Card Number: 9999121212
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000012_Document12.PDF
+Claim Amount: 1212.12
+Status: Done
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Techcombank', name='John', number='121212121212'}
+
+Claim ID: f-9999000014
+Claim Date: Sun Apr 07 19:00:39 ICT 2024
+Insured Person: Love
+Card Number: 9999141414
+Exam Date: Sun Apr 07 19:00:39 ICT 2024
+Documents: f-9999000014_Document14.PDF
+Claim Amount: 1414.14
+Status: Done
+ReceiverBankingInfo: ReceiverBankingInfo{bank='Techcombank', name='Love', number='141414141414'}
+
