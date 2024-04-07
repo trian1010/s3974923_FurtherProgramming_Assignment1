@@ -1,10 +1,20 @@
 Claim ID: f-9999131023
-Claim Date: Sun Apr 07 18:34:19 ICT 2024
+Claim Date: Sun Apr 07 18:36:43 ICT 2024
 Insured Person: Jace
 Card Number: 9999232323
-Exam Date: Sun Apr 07 18:34:19 ICT 2024
-Documents: f-9999131023_Document10.PDF, f-9999131023_Document23.PDF
+Exam Date: Sun Apr 07 18:36:43 ICT 2024
+Documents: f-9999131023_Document10.PDF,   f-9999131023_Document23.PDF
 Claim Amount: 1310.23
 Status: New
-ReceiverBankingInfo: ReceiverBankingInfo{bank='Vietcombank', name='Jace', number=''}
+ReceiverBankingInfo: ReceiverBankingInfo{bank='ReceiverBankingInfo{bank='ReceiverBankingInfo{bank='Vietcombank''', name='name='name='Jace''', number='number='number='131023131023'}'}'}
+
+Claim ID: f-9999231013
+Claim Date: Sun Apr 07 18:36:43 ICT 2024
+Insured Person: Han
+Card Number: 9999131313
+Exam Date: Sun Apr 07 18:36:43 ICT 2024
+Documents: f-9999231013_Document10.PDF,   f-9999231013_Document13.PDF
+Claim Amount: 2310.13
+Status: New
+ReceiverBankingInfo: ReceiverBankingInfo{bank='ReceiverBankingInfo{bank='ReceiverBankingInfo{bank='Tpbank''', name='name='name='Han''', number='number='number='231013231013'}'}'}
 
