@@ -95,7 +95,7 @@ public class FileWritertxt {
             e.printStackTrace();
         }
 
-        // Write the claims to the file
+        // Write the insurance cards to the file
         for (InsuranceCard insuranceCard : insuranceCardList.values()) {
             writeInsuranceCardToFile(insuranceCard);
         }
