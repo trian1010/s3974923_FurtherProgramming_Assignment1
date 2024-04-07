@@ -1,4 +1,6 @@
-import java.util.Date;
+/**
+ * @author <Nguyen Tran Tri An - s3974923>
+ */
 
 public class Main {
     public static void main (String[] args) {

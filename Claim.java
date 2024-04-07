@@ -1,3 +1,7 @@
+/**
+ * @author <Nguyen Tran Tri An - s3974923>
+ */
+
 import java.util.ArrayList;
 import java.util.Date;
 

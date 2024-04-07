@@ -1,3 +1,7 @@
+/**
+ * @author <Nguyen Tran Tri An - s3974923>
+ */
+
 public class ReceiverBankingInfo {
     // Attributes
     private String bank;

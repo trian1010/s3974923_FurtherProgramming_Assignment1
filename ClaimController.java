@@ -1,3 +1,7 @@
+/**
+ * @author <Nguyen Tran Tri An - s3974923>
+ */
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
