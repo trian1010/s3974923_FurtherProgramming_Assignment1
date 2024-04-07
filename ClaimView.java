@@ -3,6 +3,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 public abstract class ClaimView {
+    // Attributes
     public static final String CLAIM_ID = "CLAIM_ID";
     public static final Date CLAIM_DATE = new Date();
     public static final String INSURED_PERSON = "INSURED_PERSON";
@@ -17,6 +18,7 @@ public abstract class ClaimView {
 
 
 
+    // Override Methods
     public abstract void displayMainMenu(ClaimController controller, InsuranceCardController icController);
 
     public abstract void display(Claim c);

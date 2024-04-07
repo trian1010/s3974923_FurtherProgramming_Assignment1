@@ -88,6 +88,7 @@ public class InsuranceCardViewText extends InsuranceCardView {
 
         switch (choice) {
             case 1:
+                // Prompts admin to update card number with restriction
                 System.out.println("Enter updated card number (10 numbers): ");
                 String cardNumber;
                 do {
@@ -103,6 +104,7 @@ public class InsuranceCardViewText extends InsuranceCardView {
                 data.put(POLICY_OWNER, scanner.nextLine());
                 break;
             case 3:
+                // Prompts admin to enter expiration date with restriction
                 System.out.println("Enter updated expiration date (DD/MM/YYYY): ");
                 String expirationDate;
                 do {

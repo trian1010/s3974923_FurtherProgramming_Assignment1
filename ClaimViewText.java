@@ -137,7 +137,7 @@ public class ClaimViewText extends ClaimView {
         data.put(String.valueOf(CLAIM_AMOUNT), String.valueOf(scanner.nextDouble()));
         scanner.nextLine();
         System.out.println("Enter status (1 for New, 2 for Processing, 3 for Done): ");
-        // Accepting user input for status using switch case
+        // Accepting admin input for status using switch case using enum
         String statusInput = scanner.nextLine();
         String status;
         switch (statusInput) {
@@ -215,6 +215,7 @@ public class ClaimViewText extends ClaimView {
                 data.put(INSURED_PERSON, scanner.nextLine());
                 break;
             case 2:
+                // Restriction due to the requirement prompting admin to update Claim's insurance card number with the correct format
                 System.out.println("Enter updated card number (10 numbers): ");
                 String cardNumber;
                 do {
@@ -226,6 +227,7 @@ public class ClaimViewText extends ClaimView {
                 data.put(CARD_NUMBER, cardNumber);
                 break;
             case 3:
+                // Restriction due to the requirement prompting admin to update Documents with the correct format
                 System.out.println("Enter updated documents; spacing with ',': ");
                 ArrayList<String> updatedDocumentList = new ArrayList<>();
                 String[] updatedDocuments = scanner.nextLine().split(",");
@@ -243,6 +245,7 @@ public class ClaimViewText extends ClaimView {
                 data.put(String.valueOf(CLAIM_AMOUNT), scanner.nextLine());
                 break;
             case 5:
+                // Accepting admin input for status using switch case using enum
                 System.out.println("Enter updated status (1 for New, 2 for Processing, 3 for Done): ");
                 String statusInput = scanner.nextLine();
                 String status;
