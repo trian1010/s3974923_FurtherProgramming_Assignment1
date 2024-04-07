@@ -10,7 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class ClaimController {
+public class ClaimController implements ClaimProcessManager {
     // Attributes
     HashMap<String, Claim> claimList;
     private String filePath = "Claim.txt";
