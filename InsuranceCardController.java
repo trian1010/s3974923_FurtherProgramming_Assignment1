@@ -82,7 +82,7 @@ public class InsuranceCardController {
 
         if(insuranceCardList.containsKey(cardHolder)) {
             InsuranceCard insuranceCard = insuranceCardList.get(cardHolder);
-            System.out.println("Claim with the ID " + cardHolder + " has been removed.");
+            System.out.println("Insurance Card with the Card Holder named " + cardHolder + " has been removed.");
             System.out.println();
             insuranceCardList.remove(cardHolder);
 
@@ -90,7 +90,7 @@ public class InsuranceCardController {
             FileWritertxt fileWriter = new FileWritertxt();
             fileWriter.rewriteInsuranceCardToFile(insuranceCardList, filePath);
         } else {
-            System.out.println("Claim with the ID " + cardHolder + " not found.");
+            System.out.println("Insurance Card with the Card Holder named " + cardHolder + " not found.");
         }
     }
 
