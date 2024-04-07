@@ -1,20 +1,10 @@
-Claim ID: f-9999131023
-Claim Date: Sun Apr 07 18:36:43 ICT 2024
-Insured Person: Jace
-Card Number: 9999232323
-Exam Date: Sun Apr 07 18:36:43 ICT 2024
-Documents: f-9999131023_Document10.PDF,   f-9999131023_Document23.PDF
-Claim Amount: 1310.23
-Status: New
-ReceiverBankingInfo: ReceiverBankingInfo{bank='ReceiverBankingInfo{bank='ReceiverBankingInfo{bank='Vietcombank''', name='name='name='Jace''', number='number='number='131023131023'}'}'}
-
-Claim ID: f-9999231013
-Claim Date: Sun Apr 07 18:36:43 ICT 2024
-Insured Person: Han
-Card Number: 9999131313
-Exam Date: Sun Apr 07 18:36:43 ICT 2024
-Documents: f-9999231013_Document10.PDF,   f-9999231013_Document13.PDF
-Claim Amount: 2310.13
-Status: New
-ReceiverBankingInfo: ReceiverBankingInfo{bank='ReceiverBankingInfo{bank='ReceiverBankingInfo{bank='Tpbank''', name='name='name='Han''', number='number='number='231013231013'}'}'}
+Claim ID: f-9999000006
+Claim Date: Sun Apr 07 18:50:50 ICT 2024
+Insured Person: Tom
+Card Number: 9999060606
+Exam Date: Sun Apr 07 18:57:39 ICT 2024
+Documents: f-9999000006_Document6.PDF
+Claim Amount: 6666.66
+Status: Processing
+ReceiverBankingInfo: ReceiverBankingInfo{bank='ReceiverBankingInfo{bank='Vietinbank'', name='name='Tom'', number='number='060606060606'}'}
 
