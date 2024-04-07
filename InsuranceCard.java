@@ -3,15 +3,17 @@ import java.util.Date;
 public class InsuranceCard {
     // Attributes
     private String cardHolder;
+    private String cardNumber;
     private String policyOwner;
-    private Date expirationDate;
+    private String expirationDate;
 
     // Default Constructor
     public InsuranceCard() {};
 
     // Constructors
-    public InsuranceCard(String cardHolder, String policyOwner, Date expirationDate) {
+    public InsuranceCard(String cardHolder, String cardNumber, String policyOwner, String expirationDate) {
         this.cardHolder = cardHolder;
+        this.cardNumber = cardNumber;
         this.policyOwner = policyOwner;
         this.expirationDate = expirationDate;
     }
@@ -25,6 +27,14 @@ public class InsuranceCard {
         this.cardHolder = cardHolder;
     }
 
+    protected String getCardNumber() {
+        return cardNumber;
+    }
+
+    protected void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
     protected String getPolicyOwner() {
         return policyOwner;
     }
@@ -33,11 +43,11 @@ public class InsuranceCard {
         this.policyOwner = policyOwner;
     }
 
-    protected Date getExpirationDate() {
+    protected String getExpirationDate() {
         return expirationDate;
     }
 
-    protected void setExpirationDate(Date expirationDate) {
+    protected void setExpirationDate(String expirationDate) {
         this.expirationDate = expirationDate;
     }
 }

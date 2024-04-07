@@ -1,8 +1,15 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class ClaimController {
     // Attributes
     HashMap<String, Claim> claimList;
+    private String filePath = "Claim.txt";
     Claim claim;
     ClaimView view;
 
@@ -11,6 +18,7 @@ public class ClaimController {
         this.claim = claim;
         this.view = view;
         this.claimList = new HashMap<>();
+        readFromFile();
     }
 
     // Method add
@@ -38,6 +46,10 @@ public class ClaimController {
 
             System.out.println("Continue? (Yes/No) ");
             answer = scanner.nextLine();
+
+            // Write input to file
+            FileWritertxt fileWriter = new FileWritertxt();
+            fileWriter.writeClaimToFile(claim);
         }
     }
 
@@ -81,6 +93,10 @@ public class ClaimController {
             System.out.println("Claim with the ID " + id + " has been removed.");
             System.out.println();
             claimList.remove(id);
+
+            // Rewrite input to file
+            FileWritertxt fileWriter = new FileWritertxt();
+            fileWriter.rewriteClaimToFile(claimList, filePath);
         } else {
             System.out.println("Claim with the ID " + id + " not found.");
         }
@@ -139,11 +155,54 @@ public class ClaimController {
 
             view.display(claim);
 
-//            // Rewrite input to file
-//            FileWritertxt fileWriter = new FileWritertxt();
-//            fileWriter.rewriteClaimToFile(claimList, filePath);
+            // Rewrite input to file
+            FileWritertxt fileWriter = new FileWritertxt();
+            fileWriter.rewriteClaimToFile(claimList, filePath);
         } else {
             System.out.println("Claim with ID " + id + " does not exist. Cannot update.");
+        }
+    }
+
+    // Method read and retrieve data from the file text
+    public void readFromFile() {
+        String filePath = "Claim.txt";
+        try {
+            File file = new File(filePath);
+            if (file.exists()) {
+                try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        if (line.startsWith("Claim ID: ")) {
+                            String id = line.substring("Claim ID: ".length());
+                            Date claimDate = parseDateFromString(reader.readLine().substring("Claim Date: ".length()));
+                            String insuredPerson = reader.readLine().substring("Insured Person: ".length());
+                            String cardNumber = reader.readLine().substring("Card Number: ".length());
+                            Date examDate = parseDateFromString(reader.readLine().substring("Exam Date: ".length()));
+                            ArrayList<String> documentList = new ArrayList<>(Arrays.asList(reader.readLine().substring("Documents: ".length()).split(",")));
+                            double claimAmount = Double.parseDouble(reader.readLine().substring("Claim Amount: ".length()));
+                            String status = reader.readLine().substring("Status: ".length());
+                            String[] bankingInfoParts = reader.readLine().substring("ReceiverBankingInfo: ".length()).split(",");
+                            ReceiverBankingInfo receiverBankingInfo = new ReceiverBankingInfo(bankingInfoParts[0].trim(), bankingInfoParts[1].trim(), bankingInfoParts[2].trim());
+
+                            Claim claim = new Claim(id, claimDate, insuredPerson, cardNumber, examDate, documentList, claimAmount, status, receiverBankingInfo);
+                            claimList.put(id, claim);
+                        }
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Format Date so that the Date write to file is the same with the Date displayed in the System
+    private Date parseDateFromString(String dateString) {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy");
+            return dateFormat.parse(dateString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
