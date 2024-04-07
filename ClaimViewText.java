@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ClaimViewText extends ClaimView {
     // Form to display main menu
     @Override
-    public void displayMainMenu(ClaimController controller) {
+    public void displayMainMenu(ClaimController controller, InsuranceCardController icController) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("COSC2440 Further Programming");
         System.out.println("CONSOLE APP");
@@ -20,29 +20,56 @@ public class ClaimViewText extends ClaimView {
         System.out.println("'3' to delete a Claim");
         System.out.println("'4' to get one Claim");
         System.out.println("'5' to get all Claim");
-        System.out.println("'6' to exit the system");
+        System.out.println("'6' to add an Insurance Card");
+        System.out.println("'7' to update an Insurance Card");
+        System.out.println("'8' to delete an Insurance Card");
+        System.out.println("'9' to get one Insurance Card");
+        System.out.println("'10' to get all Insurance Card");
+        System.out.println("'11' to exit the system");
         int menuChoice = scanner.nextInt();
 
         switch (menuChoice) {
             case 1:
                 controller.add();
-                displayMainMenu(controller);
+                displayMainMenu(controller, icController);
                 return;
             case 2:
                 controller.update();
-                displayMainMenu(controller);
+                displayMainMenu(controller, icController);
+                return;
             case 3:
                 controller.delete();
-                displayMainMenu(controller);
+                displayMainMenu(controller, icController);
+                return;
             case 4:
                 controller.getOne();
-                displayMainMenu(controller);
+                displayMainMenu(controller, icController);
                 return;
             case 5:
                 controller.getAll();
-                displayMainMenu(controller);
+                displayMainMenu(controller, icController);
                 return;
             case 6:
+                icController.add();
+                displayMainMenu(controller, icController);
+                return;
+            case 7:
+                icController.update();
+                displayMainMenu(controller, icController);
+                return;
+            case 8:
+                icController.delete();
+                displayMainMenu(controller, icController);
+                return;
+            case 9:
+                icController.getOne();
+                displayMainMenu(controller, icController);
+                return;
+            case 10:
+                icController.getAll();
+                displayMainMenu(controller, icController);
+                return;
+            case 11:
                 break;
             default:
                 System.out.println("Invalid choice. Please enter a valid option");

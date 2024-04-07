@@ -17,7 +17,7 @@ public abstract class ClaimView {
 
 
 
-    public abstract void displayMainMenu(ClaimController controller);
+    public abstract void displayMainMenu(ClaimController controller, InsuranceCardController icController);
 
     public abstract void display(Claim c);
 
