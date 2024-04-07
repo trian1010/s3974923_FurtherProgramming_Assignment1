@@ -170,60 +170,84 @@ public class ClaimViewText extends ClaimView {
         System.out.println("Enter the ID of the Claim that you want to update: ");
         String ClaimID = scanner.nextLine();
         data.put(CLAIM_ID, ClaimID);
-        System.out.println("Update insured person: ");
-        data.put(INSURED_PERSON, scanner.nextLine());
-        // Restriction due to the requirement prompting admin to input Claim's insurance card number with the correct format
-        System.out.println("Update card number (10 numbers): ");
-        String CardNumber;
-        do {
-            CardNumber = scanner.nextLine();
-            if (!CardNumber.matches("\\d{10}")) {
-                System.out.println("Invalid card number. Must be in the format 10 numbers");
-            }
-        } while (!CardNumber.matches("\\d{10}"));
-        data.put(CARD_NUMBER, CardNumber);
-        data.put("EXAM_DATE", String.valueOf(EXAM_DATE.getTime()));
-        System.out.println("Update your documents; spacing with ',': ");
-        ArrayList<String> documentList = new ArrayList<>();
-        // Restriction due to the requirement prompting admin to input Documents with the correct format
-        String[] documents = scanner.nextLine().split(",");
-        for (String docs : documents) {
-            String PDFName = ClaimID + "_" + docs.trim() + ".PDF";
-            documentList.add(PDFName);
-        }
-        data.put(String.valueOf(DOCUMENT_LIST), String.join(",", documentList));
-        System.out.println("Update the claim amount: ");
-        data.put(String.valueOf(CLAIM_AMOUNT), String.valueOf(scanner.nextDouble()));
-        scanner.nextLine();
-        System.out.println("Enter status (1 for New, 2 for Processing, 3 for Done): ");
-        // Accepting user input for status using switch case
-        String statusInput = scanner.nextLine();
-        String status;
-        switch (statusInput) {
-            case "1":
-                status = Status.New.name();
+
+        System.out.println("What do you want to update?");
+        System.out.println("1. Insured Person");
+        System.out.println("2. Card Number");
+        System.out.println("3. Document List");
+        System.out.println("4. Claim Amount");
+        System.out.println("5. Status");
+        System.out.println("6. Receiver Banking Info");
+        System.out.println("Enter the number corresponding to the attribute you want to update: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline character
+
+        switch (choice) {
+            case 1:
+                System.out.println("Enter updated insured person: ");
+                data.put(INSURED_PERSON, scanner.nextLine());
                 break;
-            case "2":
-                status = Status.Processing.name();
+            case 2:
+                System.out.println("Enter updated card number (10 numbers): ");
+                String cardNumber;
+                do {
+                    cardNumber = scanner.nextLine();
+                    if (!cardNumber.matches("\\d{10}")) {
+                        System.out.println("Invalid card number. Must be in the format 10 numbers");
+                    }
+                } while (!cardNumber.matches("\\d{10}"));
+                data.put(CARD_NUMBER, cardNumber);
                 break;
-            case "3":
-                status = Status.Done.name();
+            case 3:
+                System.out.println("Enter updated documents; spacing with ',': ");
+                ArrayList<String> updatedDocumentList = new ArrayList<>();
+                String[] updatedDocuments = scanner.nextLine().split(",");
+                for (String doc : updatedDocuments) {
+                    String trimmedDoc = doc.trim();
+                    if (!trimmedDoc.isEmpty()) {
+                        String PDFName = ClaimID + "_" + trimmedDoc + ".PDF";
+                        updatedDocumentList.add(PDFName);
+                    }
+                }
+                data.put(String.valueOf(DOCUMENT_LIST), String.join(",", updatedDocumentList));
+                break;
+            case 4:
+                System.out.println("Enter updated claim amount: ");
+                data.put(String.valueOf(CLAIM_AMOUNT), scanner.nextLine());
+                break;
+            case 5:
+                System.out.println("Enter updated status (1 for New, 2 for Processing, 3 for Done): ");
+                String statusInput = scanner.nextLine();
+                String status;
+                switch (statusInput) {
+                    case "1":
+                        status = Status.New.name();
+                        break;
+                    case "2":
+                        status = Status.Processing.name();
+                        break;
+                    case "3":
+                        status = Status.Done.name();
+                        break;
+                    default:
+                        System.out.println("Invalid input. Setting status to New by default.");
+                        status = Status.New.name();
+                        break;
+                }
+                data.put(STATUS, status);
+                break;
+            case 6:
+                System.out.println("Enter updated Receiver Banking Info");
+                System.out.println("Enter the Bank: ");
+                data.put(RECEIVER_BANKING_INFO_BANK, scanner.nextLine());
+                System.out.println("Enter Your Name");
+                data.put(RECEIVER_BANKING_INFO_NAME, scanner.nextLine());
+                System.out.println("Enter bank number: ");
+                data.put(RECEIVER_BANKING_INFO_NUMBER, scanner.nextLine());
                 break;
             default:
-                System.out.println("Invalid input. Setting status to New by default.");
-                status = Status.New.name();
-                break;
+                System.out.println("Invalid choice.");
         }
-        data.put(STATUS, status);
-
-        System.out.println("Enter Receiver Banking Info");
-        System.out.println("Enter the Bank: ");
-        data.put(RECEIVER_BANKING_INFO_BANK, scanner.nextLine());
-        System.out.println("Enter Your Name");
-        data.put(RECEIVER_BANKING_INFO_NAME, scanner.nextLine());
-        System.out.println("Enter bank number: ");
-        data.put(RECEIVER_BANKING_INFO_NUMBER, scanner.nextLine());
-        ReceiverBankingInfo receiverBankingInfo = new ReceiverBankingInfo();
         return data;
     }
 }

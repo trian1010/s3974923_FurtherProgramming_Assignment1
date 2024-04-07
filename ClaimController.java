@@ -92,29 +92,58 @@ public class ClaimController {
         HashMap<String, String> data = view.displayUpdateClaimForm();
         String id = data.get(ClaimView.CLAIM_ID);
 
-        if(claimList.containsKey(id)) {
-            Claim claim = claimList.get(id);
-            String insuredPerson = data.get(ClaimView.INSURED_PERSON);
-            String cardNumber = data.get(ClaimView.CARD_NUMBER);
-            Date examDate = new Date(Long.parseLong(data.get("EXAM_DATE"))); // Convert String to Date
-            ArrayList<String> documentList = new ArrayList<>(Arrays.asList(data.get(String.valueOf(ClaimView.DOCUMENT_LIST)).split(","))); // Convert String to ArrayList
-            double claimAmount = Double.parseDouble(data.get(String.valueOf(ClaimView.CLAIM_AMOUNT))); // Convert String to double
-            String status = data.get(ClaimView.STATUS);
-            ReceiverBankingInfo receiverBankingInfo = new ReceiverBankingInfo(data.get(ClaimView.RECEIVER_BANKING_INFO_BANK), data.get(ClaimView.RECEIVER_BANKING_INFO_NAME), data.get(ClaimView.RECEIVER_BANKING_INFO_NUMBER));
-
+        if (claimList.containsKey(id)) {
             // Update specific attributes (ClaimID and ClaimDate will not be update since ClaimDate is the date that the Claim is created and ClaimID must remain the same)
-            claim.setInsuredPerson(insuredPerson);
-            claim.setCardNumber(cardNumber);
+            Claim claim = claimList.get(id);
+
+            String insuredPerson = data.get(ClaimView.INSURED_PERSON);
+            if (insuredPerson != null && !insuredPerson.isEmpty()) {
+                claim.setInsuredPerson(insuredPerson);
+            }
+
+            String cardNumber = data.get(ClaimView.CARD_NUMBER);
+            if (cardNumber != null && !cardNumber.isEmpty()) {
+                claim.setCardNumber(cardNumber);
+            }
+
+            // The system update examDate
             claim.setExamDate(new Date());
-            claim.setDocumentList(documentList);
-            claim.setClaimAmount(claimAmount);
-            claim.setStatus(status);
-            claim.setReceiverBankingInfo(receiverBankingInfo);
+
+            String documents = data.get(String.valueOf(ClaimView.DOCUMENT_LIST));
+            if (documents != null && !documents.isEmpty()) {
+                ArrayList<String> documentList = new ArrayList<>(Arrays.asList(documents.split(",")));
+                claim.setDocumentList(documentList);
+            }
+
+            String claimAmountStr = data.get(String.valueOf(ClaimView.CLAIM_AMOUNT));
+            if (claimAmountStr != null && !claimAmountStr.isEmpty()) {
+                double claimAmount = Double.parseDouble(claimAmountStr);
+                claim.setClaimAmount(claimAmount);
+            }
+
+            String status = data.get(ClaimView.STATUS);
+            if (status != null && !status.isEmpty()) {
+                claim.setStatus(status);
+            }
+
+            String bank = data.get(ClaimView.RECEIVER_BANKING_INFO_BANK);
+            String name = data.get(ClaimView.RECEIVER_BANKING_INFO_NAME);
+            String number = data.get(ClaimView.RECEIVER_BANKING_INFO_NUMBER);
+            if (bank != null && !bank.isEmpty() && name != null && !name.isEmpty() && number != null && !number.isEmpty()) {
+                ReceiverBankingInfo receiverBankingInfo = new ReceiverBankingInfo(bank, name, number);
+                claim.setReceiverBankingInfo(receiverBankingInfo);
+            }
 
             // Update claim in the claimList
             claimList.put(id, claim);
 
             view.display(claim);
+
+//            // Rewrite input to file
+//            FileWritertxt fileWriter = new FileWritertxt();
+//            fileWriter.rewriteClaimToFile(claimList, filePath);
+        } else {
+            System.out.println("Claim with ID " + id + " does not exist. Cannot update.");
         }
     }
 }
